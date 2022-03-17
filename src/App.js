@@ -1,5 +1,5 @@
 import "./App.css";
-import Multiform from "./Components/MultiForm/Multiform";
+import Multiform from "./Components/MultiForm/MultiForm";
 
 function App() {
   return (

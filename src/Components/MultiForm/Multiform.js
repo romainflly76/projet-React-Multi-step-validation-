@@ -3,6 +3,8 @@ import "./MultiForm.css";
 import Indicator from "./Indicator/Indicator";
 import Cardebegin from "./Infos/CardBegin";
 import CardEnd from "./Infos/CardEnd";
+import DietForm from "./SubForms/DietForm";
+
 
 export default function Multiform() {
   // Il faut utiliser un index pour suivre tous les formulaires
@@ -20,6 +22,7 @@ export default function Multiform() {
     prefs: {},
   });
 
+
   // 2. Reçois index
   const modifyIndex = (index) => {
     // 1. SetFormIndex de index et dois recvoir index.
@@ -29,8 +32,9 @@ export default function Multiform() {
   return (
     <div className="container-multiform">
       <Indicator />
-      {/* Operation ternaire, pour dire formIndex est egale à 1? Alors j'envoi CardBegin */}
-      {formIndex === 1 ? <Cardebegin modifyIndex={modifyIndex} /> : ""}
+      { formIndex === 1 ? <Cardebegin modifyIndex={modifyIndex} />
+      : formIndex === 2 ? <DietForm modifyIndex={modifyIndex} />
+      : "" }
     </div>
   );
 }
