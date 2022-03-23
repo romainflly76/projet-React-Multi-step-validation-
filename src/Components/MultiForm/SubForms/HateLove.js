@@ -41,12 +41,12 @@ const handleTxtArea = (e, pref) => {
 const preventFunc = (e) => {
     e.preventDefault();
 
-    props.modifyIndex(6, formData)
-}
+    props.modifyIndex(6, formData)};
+
 
  // *********  Le bouton retour arrière modifie l'index pour mettre la page inferieure *****
 const handleReturn = () => {
-    props.modifyIndex(4)
+    props.modifyIndex(4);
 }
 
   return (
@@ -56,22 +56,23 @@ const handleReturn = () => {
 
        <label htmlFor="prefered">Tes aliments préférés, séparés par une virgule :</label>
        <textarea 
-       onChange={e => handleTxtArea(e, 'love')}
+       onChange={(e) => handleTxtArea(e, 'love')}
        id="prefered"
        placeholder='Un ou plusieurs, si tu en as'
        ></textarea>
 
        <label htmlFor="hated">Les aliments que tu ne suporte pas, séparés par une virgule :</label>
        <textarea 
-       onChange={e => handleTxtArea(e, 'hate')}
+       onChange={(e) => handleTxtArea(e, 'hate')}
        id="hated"
        placeholder='Un ou plusieurs, si tu en as'
        ></textarea>
 
        <div className="container-nav-btns">
               <button onClick={handleReturn} type='button' className='prev'>Précédent</button>
-              <button>Valider</button>
+              <button>Valider </button>
        </div>
    </form>
-  )
-}
+  );
+  }
+

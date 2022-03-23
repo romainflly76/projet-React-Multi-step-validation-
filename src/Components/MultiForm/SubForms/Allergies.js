@@ -37,7 +37,7 @@ export default function Allergies(props) {
         props.modifyIndex(3)
     }
 
-    // ********* le retout (affichage de la Checkbox)
+    // ********* le retour (affichage de la Checkbox)
     return (
     <form 
       className='checkbox-form'

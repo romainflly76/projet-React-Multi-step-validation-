@@ -51,18 +51,41 @@ export default function Multiform() {
     }
   }
   console.log(allFormData);
+
+  const elements = [
+    <Cardebegin modifyIndex={modifyIndex} />,
+    <DietForm modifyIndex={modifyIndex} />,
+    <FoodStyle modifyIndex={modifyIndex} />,
+    <Allergies modifyIndex={modifyIndex} />,
+    <HateLove modifyIndex={modifyIndex} />,
+    <CardEnd modifyIndex={modifyIndex} />,
+  ]
   
 
   return (
     <div className="container-multiform">
-      <Indicator />
-      { formIndex === 1 ? <Cardebegin modifyIndex={modifyIndex} />
+      <Indicator formIndex={formIndex}/>
+
+      {/*  On map à travers le tableau elements  on prends l'item et l'index 
+       pour avoir accs aux index */}
+      {elements.map((item, index) => {
+        // si index + 1 comme l'index commence à 0 mais dans 
+        // le state on a commencer l'index à 1
+        if((index + 1) === formIndex){
+
+        // ça retourn l'index du tableau elements
+          return elements[index]
+        }
+      })}
+
+      {/* { formIndex === 1 ? <Cardebegin modifyIndex={modifyIndex} />
       : formIndex === 2 ? <DietForm modifyIndex={modifyIndex} />
       : formIndex === 3 ? <FoodStyle modifyIndex={modifyIndex} />
       : formIndex === 4 ? <Allergies modifyIndex={modifyIndex} />
       : formIndex === 5 ? <HateLove modifyIndex={modifyIndex} />
       : formIndex === 6 ? <CardEnd modifyIndex={modifyIndex} />
-      : "" }
+      : "" } */}
     </div>
   );
 }
+ 
